@@ -23,66 +23,207 @@
                 <!--Formulario-->
                 
                 <form method="POST">
-                    <div class="mb-3 mt-3">
+                    <!--<div class="mb-3 mt-3">
                       <label for="GENDER">Genero:</label>
                       <input type="number" class="form-control" id="GENDER" placeholder="1: Masculino, 2: Femenino" name="GENDER">
+                    </div>-->
+                    <p>Género:</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="GENDER" id="GENDERM" value="1">
+                        <label class="form-check-label" for="GENDERM">Masculino</label>
                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="GENDER" id="GENDERF" value="2">
+                        <label class="form-check-label" for="GENDERF">Femenino</label>
+                    </div><br>
+
                     <div class="mb-3 mt-3">
                         <label for="AGE">Edad:</label>
                         <input type="number" class="form-control" id="AGE" placeholder="Introducir edad" name="AGE">
-                    </div>
-                    <div class="mb-3 mt-3">
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="SMOKING">¿El paciente fuma?</label>
                         <input type="number" class="form-control" id="SMOKING" placeholder="1: No, 2: Si" name="SMOKING">
+                    </div>-->
+                    <p>¿El paciente fuma?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="SMOKING" id="SMOKINGNO" value="1">
+                        <label class="form-check-label" for="SMOKINGNO">No</label>
                     </div>
-                    <div class="mb-3 mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="SMOKING" id="SMOKINGYES" value="2">
+                        <label class="form-check-label" for="SMOKINGYES">Si</label>
+                    </div><br>
+                    
+                    <!--<div class="mb-3 mt-3">
                         <label for="YELLOW_FINGERS">¿El paciente presenta dedos amarillos?</label>
                         <input type="number" class="form-control" id="YELLOW_FINGERS" placeholder="1: No, 2: Si" name="YELLOW_FINGERS">
+                    </div>-->
+                    <p>¿El paciente presenta dedos amarillos?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="YELLOW_FINGERS" id="YELLOW_FINGERNO" value="1">
+                        <label class="form-check-label" for="YELLOW_FINGERSNO">No</label>
                     </div>
-                    <div class="mb-3 mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="YELLOW_FINGERS" id="YELLOW_FINGERSYES" value="2">
+                        <label class="form-check-label" for="YELLOW_FINGERSYES">Si</label>
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="ANXIETY">¿El paciente presenta ansiedad?:</label>
                         <input type="number" class="form-control" id="ANXIETY" placeholder="1: No, 2: Si" name="ANXIETY">
+                    </div>-->
+                    <p>¿El paciente presenta ansiedad?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ANXIETY" id="ANXIETYNO" value="1">
+                        <label class="form-check-label" for="ANXIETYNO">No</label>
                     </div>
-                    <div class="mb-3 mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ANXIETY" id="ANXIETYYES" value="2">
+                        <label class="form-check-label" for="ANXIETYYES">Si</label>
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="PEER_PRESSURE">¿El paciente presenta baja presión?:</label>
                         <input type="number" class="form-control" id="PEER_PRESSURE" placeholder="1: No, 2: Si" name="PEER_PRESSURE">
+                    </div>-->
+                    <p>¿El paciente presenta baja presión?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="PEER_PRESSURE" id="PEER_PRESSURENO" value="1">
+                        <label class="form-check-label" for="PEER_PRESSURENO">No</label>
                     </div>
-                    <div class="mb-3 mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="PEER_PRESSURE" id="PEER_PRESSUREYES" value="2">
+                        <label class="form-check-label" for="PEER_PRESSUREYES">Si</label>
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="CHRONIC_DISEASE">¿El paciente presenta enfermedades crónicas?:</label>
                         <input type="number" class="form-control" id="CHRONIC_DISEASE" placeholder="1: No, 2: Si" name="CHRONIC_DISEASE">
+                    </div>-->
+                    <p>¿El paciente presenta enfermedades crónicas?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="CHRONIC_DISEASE" id="CHRONIC_DISEASENO" value="1">
+                        <label class="form-check-label" for="CHRONIC_DISEASENO">No</label>
                     </div>
-                    <div class="mb-3 mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="CHRONIC_DISEASE" id="CHRONIC_DISEASEYES" value="2">
+                        <label class="form-check-label" for="CHRONIC_DISEASEYES">Si</label>
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="FATIGUE">¿El paciente presenta fatiga?:</label>
                         <input type="number" class="form-control" id="FATIGUE" placeholder="1: No, 2: Si" name="FATIGUE">
-                    </div> 
-                    <div class="mb-3 mt-3">
+                    </div>-->
+                    <p>¿El paciente presenta fatiga?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="FATIGUE" id="FATIGUENO" value="1">
+                        <label class="form-check-label" for="FATIGUENO">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="FATIGUE" id="FATIGUEYES" value="2">
+                        <label class="form-check-label" for="FATIGUEYES">Si</label>
+                    </div><br>
+                    
+                    <!--<div class="mb-3 mt-3">
                         <label for="ALLERGY">¿El paciente presenta alergia?:</label>
                         <input type="number" class="form-control" id="ALLERGY" placeholder="1: No, 2: Si" name="ALLERGY">
-                    </div> 
-                    <div class="mb-3 mt-3">
+                    </div>-->
+                    <p>¿El paciente presenta alergia?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ALLERGY" id="ALLERGYNO" value="1">
+                        <label class="form-check-label" for="ALLERGYNO">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ALLERGY" id="ALLERGYYES" value="2">
+                        <label class="form-check-label" for="ALLERGYYES">Si</label>
+                    </div><br>
+                    
+                    <!--<div class="mb-3 mt-3">
                         <label for="WHEEZING">¿El paciente presenta silbidos en el pecho?:</label>
                         <input type="number" class="form-control" id="WHEEZING" placeholder=": No, 2: Si" name="WHEEZING">
+                    </div>-->
+                    <p>¿El paciente presenta silbidos en el pecho?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="WHEEZING" id="WHEEZINGNO" value="1">
+                        <label class="form-check-label" for="WHEEZINGNO">No</label>
                     </div>
-                    <div class="mb-3 mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="WHEEZING" id="WHEEZINGYES" value="2">
+                        <label class="form-check-label" for="WHEEZINGYES">Si</label>
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="ALCOHOL_CONSUMING">¿El paciente consume alcohol?:</label>
                         <input type="number" class="form-control" id="ALCOHOL_CONSUMING" placeholder="1: No, 2: Si" name="ALCOHOL_CONSUMING">
-                    </div> 
-                    <div class="mb-3 mt-3">
+                    </div>-->
+                    <p>¿El paciente consume alcohol?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ALCOHOL_CONSUMING" id="ALCOHOL_CONSUMINGNO" value="1">
+                        <label class="form-check-label" for="ALCOHOL_CONSUMINGNO">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ALCOHOL_CONSUMING" id="ALCOHOL_CONSUMINGYES" value="2">
+                        <label class="form-check-label" for="ALCOHOL_CONSUMINGYES">Si</label>
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="COUGHING">¿El paciente presenta tos?:</label>
                         <input type="number" class="form-control" id="COUGHING" placeholder="1: No, 2: Si" name="COUGHING">
-                    </div> 
-                    <div class="mb-3 mt-3">
+                    </div>-->
+                    <p>¿El paciente presenta tos?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="COUGHING" id="COUGHINGNO" value="1">
+                        <label class="form-check-label" for="COUGHINGNO">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="COUGHING" id="COUGHINGYES" value="2">
+                        <label class="form-check-label" for="COUGHINGYES">Si</label>
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="SHORTNESS_OF_BREATH">¿El paciente presenta falta de aliento?:</label>
                         <input type="number" class="form-control" id="SHORTNESS_OF_BREATH" placeholder="1: No, 2: Si" name="SHORTNESS_OF_BREATH">
-                    </div> 
-                    <div class="mb-3 mt-3">
+                    </div>--> 
+                    <p>¿El paciente presenta falta de aliento?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="SHORTNESS_OF_BREATH" id="SHORTNESS_OF_BREATHNO" value="1">
+                        <label class="form-check-label" for="SHORTNESS_OF_BREATHNO">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="SHORTNESS_OF_BREATH" id="SHORTNESS_OF_BREATHYES" value="2">
+                        <label class="form-check-label" for="SHORTNESS_OF_BREATHYES">Si</label>
+                    </div><br>
+
+                    <!--<div class="mb-3 mt-3">
                         <label for="SWALLOWING_DIFFICULTY">¿El paciente dificultad para tragar?:</label>
                         <input type="number" class="form-control" id="SWALLOWING_DIFFICULTY" placeholder="1: No, 2: Si" name="SWALLOWING_DIFFICULTY">
-                    </div> 
-                    <div class="mb-3 mt-3">
+                    </div>-->
+                    <p>¿El paciente dificultad para tragar?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="SWALLOWING_DIFFICULTY" id="SWALLOWING_DIFFICULTYNO" value="1">
+                        <label class="form-check-label" for="SWALLOWING_DIFFICULTYNO">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="SWALLOWING_DIFFICULTY" id="SWALLOWING_DIFFICULTYYES" value="2">
+                        <label class="form-check-label" for="SWALLOWING_DIFFICULTYYES">Si</label>
+                    </div><br>
+                    
+                    <!--<div class="mb-3 mt-3">
                         <label for="CHEST_PAIN">¿El paciente presenta dolor en el pecho?:</label>
                         <input type="number" class="form-control" id="CHEST_PAIN" placeholder="1: No, 2: Si" name="CHEST_PAIN">
-                    </div>   
+                    </div>-->
+                    <p>¿El paciente presenta dolor en el pecho?</p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="CHEST_PAIN" id="CHEST_PAINNO" value="1">
+                        <label class="form-check-label" for="CHEST_PAINNO">No</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="CHEST_PAIN" id="CHEST_PAINYES" value="2">
+                        <label class="form-check-label" for="CHEST_PAINYES">Si</label>
+                    </div><br><br>
+                    
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
 
