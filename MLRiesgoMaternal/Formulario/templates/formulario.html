@@ -11,7 +11,17 @@
     <script>
         function limpiar(){
             var titulo = document.getElementById("Titulo");
-            titulo.textContent = "Diagnóstico de cáncer de pulmon";
+            titulo.textContent = "Diagnóstico de riesgo de maternidad";
+        }
+
+        function validarEntero(input, error) {
+            const errorElement = document.getElementById(error);
+            // Verifica si el valor contiene un punto decimal
+            if (input.value.includes('.')) {
+                errorElement.style.display = 'block';  // Muestra el error
+            } else {
+                errorElement.style.display = 'none';  // Oculta el error si es válido
+            }
         }
     </script>
     <style>
@@ -30,11 +40,11 @@
     <!--Título-->
     <div class="container-fluid p-1 bg-info text-white text-center">
         <h1 style="font-size: 5;" id="Titulo" class="fw-bold">
-            <!--Diagnóstico de cáncer de pulmon-->
+            <!--Diagnóstico de riesgo de maternidad-->
             {% if resultado %}
                 {{ resultado }}
             {% else %}
-                Diagnóstico de cáncer de pulmon
+                Diagnóstico de riesgo de maternidad
             {% endif %}
         </h1>
         <h3>Ingrese los siguientes valores:</h3>
@@ -50,149 +60,54 @@
                 
                 <form method="POST">
                     
-                    <p>Género:</p>
-                    <!--<div class="radio-container">
-                        <label>
-                            <input type="radio" name="diagnostico" value="benigno">
-                            Benigno
-                        </label>
-                    
-                        <label>
-                            <input type="radio" name="diagnostico" value="maligno">
-                            Maligno
-                        </label>
-                    </div>-->
-                    <div class="radio-container">
-                        <input type="radio" name="GENDER" id="GENDERM" value="1" required>
-                        <label for="GENDERM">Masculino</label>
-                    
-                        <input type="radio" name="GENDER" id="GENDERF" value="2" required>
-                        <label for="GENDERF">Femenino</label>
-                    </div><br>
-
+                    <!-- Edad-->
                     <div class="mb-3 mt-3">
-                        <label for="AGE">Edad:</label>
-                        <input type="number" class="form-control" id="AGE" placeholder="Introducir edad" name="AGE">
+                        <label for="Age">Edad:</label>
+                        <input type="number" class="form-control" id="Age" placeholder="Ej: 20, 46" name="Age" 
+                        oninput="validarEntero(this, 'errorAge')">
+                    </div>
+                    <div id="errorAge" class="text-danger" style="display: none;">⚠️ Por favor, ingresa un número entero.</div><br>
+                    <!-- 1. SystolicBP (Presión arterial sistólica) -->
+                    <div class="mb-3 mt-3">
+                        <label for="SystolicBP">Presión Sistólica (mmHg):</label>
+                        <input type="number" class="form-control" id="SystolicBP" placeholder="Ej: 120, 140" name="SystolicBP" 
+                        oninput="validarEntero(this, 'errorSystolicBP')">
+                    </div>
+                    <div id="errorSystolicBP" class="text-danger" style="display: none;">⚠️ Por favor, ingresa un número entero.</div><br>
+
+                    <!-- 2. DiastolicBP (Presión arterial diastólica) -->
+                    <div class="mb-3 mt-3">
+                        <label for="DiastolicBP">Presión Diastólica (mmHg):</label>
+                        <input type="number" class="form-control" id="DiastolicBP" placeholder="Ej: 80, 90" name="DiastolicBP"
+                        oninput="validarEntero(this, 'errorDiastolicBP')">
+                    </div>
+                    <div id="errorDiastolicBP" class="text-danger" style="display: none;">⚠️ Por favor, ingresa un número entero.</div><br>
+
+                    <!-- 3. BS (Nivel de glucosa en sangre) -->
+                    <div class="mb-3 mt-3">
+                        <label for="BS">Glucosa en sangre (mmol/L):</label>
+                        <input type="number" class="form-control" id="BS" placeholder="Solo un decimal permitido. Ej: 90.5, 150.2" 
+                        name="BS" step="0.1">
                     </div><br>
 
-                    <p>¿Fuma?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="SMOKING" id="SMOKINGNO" value="1" required>
-                        <label for="SMOKINGNO">No</label>
-                    
-                        <input type="radio" name="SMOKING" id="SMOKINGYES" value="2" required>
-                        <label for="SMOKINGYES">Si</label>
-                    </div><br>
-                    
-                    <p>¿Presenta dedos amarillos?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="YELLOW_FINGERS" id="YELLOW_FINGERNO" value="1" required>
-                        <label for="YELLOW_FINGERSNO">No</label>
-                    
-                        <input type="radio" name="YELLOW_FINGERS" id="YELLOW_FINGERSYES" value="2" required>
-                        <label for="YELLOW_FINGERSYES">Si</label>
+                    <!-- 4. BodyTemp (Temperatura corporal) -->
+                    <div class="mb-3 mt-3">
+                        <label for="BodyTemp">Temperatura corporal (°C):</label>
+                        <input type="number" class="form-control" id="BodyTemp" placeholder="Solo un decimal permitido. Ej: 36.5, 38.2" 
+                        name="BodyTemp" step="0.1">
                     </div><br>
 
-                    <p>¿Presenta ansiedad?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="ANXIETY" id="ANXIETYNO" value="1" required>
-                        <label for="ANXIETYNO">No</label>
+                    <!-- 5. HeartRate (Frecuencia cardíaca) -->
+                    <div class="mb-3 mt-3">
+                        <label for="HeartRate">Frecuencia cardíaca (lpm):</label>
+                        <input type="number" class="form-control" id="HeartRate" placeholder="Ej: 70, 100" name="HeartRate"
+                        oninput="validarEntero(this, 'errorHeartRate')">
+                    </div>
+                    <div id="errorHeartRate" class="text-danger" style="display: none;">⚠️ Por favor, ingresa un número entero.</div><br>
                     
-                        <input type="radio" name="ANXIETY" id="ANXIETYYES" value="2" required>
-                        <label for="ANXIETYYES">Si</label>
-                    </div><br>
-
-                    <p>¿Presenta baja presión?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="PEER_PRESSURE" id="PEER_PRESSURENO" value="1" required>
-                        <label for="PEER_PRESSURENO">No</label>
-                    
-                        <input type="radio" name="PEER_PRESSURE" id="PEER_PRESSUREYES" value="2" required>
-                        <label for="PEER_PRESSUREYES">Si</label>
-                    </div><br>
-
-                    <p>¿Presenta enfermedades crónicas?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="CHRONIC_DISEASE" id="CHRONIC_DISEASENO" value="1" required>
-                        <label for="CHRONIC_DISEASENO">No</label>
-                    
-                        <input type="radio" name="CHRONIC_DISEASE" id="CHRONIC_DISEASEYES" value="2" required>
-                        <label for="CHRONIC_DISEASEYES">Si</label>
-                    </div><br>
-
-                    <p>¿Presenta fatiga?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="FATIGUE" id="FATIGUENO" value="1" required>
-                        <label for="FATIGUENO">No</label>
-                    
-                        <input type="radio" name="FATIGUE" id="FATIGUEYES" value="2" required>
-                        <label for="FATIGUEYES">Si</label>
-                    </div><br>
-                    
-                    <p>¿Presenta alergia?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="ALLERGY" id="ALLERGYNO" value="1" required>
-                        <label for="ALLERGYNO">No</label>
-                    
-                        <input type="radio" name="ALLERGY" id="ALLERGYYES" value="2" required>
-                        <label for="ALLERGYYES">Si</label>
-                    </div><br>
-                    
-                    <p>¿Presenta silbidos en el pecho?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="WHEEZING" id="WHEEZINGNO" value="1" required>
-                        <label for="WHEEZINGNO">No</label>
-                    
-                        <input type="radio" name="WHEEZING" id="WHEEZINGYES" value="2" required>
-                        <label for="WHEEZINGYES">Si</label>
-                    </div><br>
-
-                    <p>¿Consume alcohol?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="ALCOHOL_CONSUMING" id="ALCOHOL_CONSUMINGNO" value="1" required> 
-                        <label for="ALCOHOL_CONSUMINGNO">No</label>
-                    
-                        <input type="radio" name="ALCOHOL_CONSUMING" id="ALCOHOL_CONSUMINGYES" value="2" required>
-                        <label for="ALCOHOL_CONSUMINGYES">Si</label>
-                    </div><br>
-
-                    <p>¿Presenta tos?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="COUGHING" id="COUGHINGNO" value="1" required>
-                        <label for="COUGHINGNO">No</label>
-                    
-                        <input type="radio" name="COUGHING" id="COUGHINGYES" value="2" required>
-                        <label for="COUGHINGYES">Si</label>
-                    </div><br>
-
-                    <p>¿Presenta falta de aliento?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="SHORTNESS_OF_BREATH" id="SHORTNESS_OF_BREATHNO" value="1" required>
-                        <label for="SHORTNESS_OF_BREATHNO">No</label>
-                    
-                        <input type="radio" name="SHORTNESS_OF_BREATH" id="SHORTNESS_OF_BREATHYES" value="2" required>
-                        <label for="SHORTNESS_OF_BREATHYES">Si</label>
-                    </div><br>
-
-                    <p>¿Presenta dificultad para tragar?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="SWALLOWING_DIFFICULTY" id="SWALLOWING_DIFFICULTYNO" value="1" required>
-                        <label for="SWALLOWING_DIFFICULTYNO">No</label>
-                    
-                        <input type="radio" name="SWALLOWING_DIFFICULTY" id="SWALLOWING_DIFFICULTYYES" value="2" required>
-                        <label for="SWALLOWING_DIFFICULTYYES">Si</label>
-                    </div><br>
-                    
-                    <p>¿Presenta dolor en el pecho?</p>
-                    <div class="radio-container">
-                        <input type="radio" name="CHEST_PAIN" id="CHEST_PAINNO" value="1" required>
-                        <label for="CHEST_PAINNO">No</label>
-                    
-                        <input type="radio" name="CHEST_PAIN" id="CHEST_PAINYES" value="2" required>
-                        <label for="CHEST_PAINYES">Si</label>
-                    </div><br><br>
-                    
-                    <button type="submit" class="btn btn-primary d-block mx-auto" name="envio" value="ingresar_datos">Enviar</button>
+                    <button type="submit" class="btn btn-primary d-block mx-auto" name="envio" value="sin_pdf">Enviar</button>
+                    <!--<button type="submit" class="btn btn-primary d-block mx-auto" name="envio" value="sin_pdf">Enviar con pdf</button>
+                -->
                 </form>
             </div>
             <div class="col p-5"></div>
